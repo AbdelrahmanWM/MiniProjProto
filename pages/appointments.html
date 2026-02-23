@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Appointments</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+        .title { margin: 0; font-size: 20px; font-weight: 900; }
+        .add { 
+            text-decoration: none; color: #fff; font-weight: 900; background: var(--blue);
+            padding: 10px 14px; border-radius: 14px; box-shadow: var(--shadow2); font-size: 14px;
+        }
+        .name { margin: 0; font-size: 17px; font-weight: 900; }
+        .meta { margin: 4px 0 0; font-size: 13px; color: var(--muted); line-height: 1.4; }
+        .tag { 
+            font-size: 11px; font-weight: 900; padding: 6px 10px; border-radius: 999px; 
+            border: 1px solid var(--line); background: #fff; color: var(--text); white-space: nowrap;
+        }
+        .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+        .pill { 
+            font-size: 12px; font-weight: 800; padding: 8px 12px; border-radius: 999px; 
+            border: 1px solid var(--line); background: #F9FAFB; color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <main class="app">
+        <div class="header">
+            <h1 class="title">Appointments</h1>
+            <a class="add" href="../index.html">＋ Add</a>
+        </div>
+
+        <section class="card">
+            <div class="row">
+                <div>
+                    <p class="name">Dr. Smith (Endocrinology)</p>
+                    <p class="meta">Oct 12 • 10:30 AM • Clinic A</p>
+                </div>
+                <div class="tag">Upcoming</div>
+            </div>
+            <div class="actions">
+                <div class="pill">📞 Call</div>
+                <div class="pill">📍 Directions</div>
+                <div class="pill">📝 Notes</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="row">
+                <div>
+                    <p class="name">Blood Test</p>
+                    <p class="meta">Oct 20 • 8:00 AM • Lab Center</p>
+                </div>
+                <div class="tag">Scheduled</div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="nav">
+        <a href="../index.html"><span class="ico">🏠</span><span>Home</span></a>
+        <a href="meds.html"><span class="ico">💊</span><span>Meds</span></a>
+        <a class="active" href="appointments.html"><span class="ico">📅</span><span>Visits</span></a>
+        <a href="caregiver.html"><span class="ico">👥</span><span>Care</span></a>
+        <a href="settings.html"><span class="ico">⚙️</span><span>Settings</span></a>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Settings</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .header { margin-bottom: 8px; }
+        .title { margin: 0; font-size: 20px; font-weight: 900; }
+        .section { margin-top: 20px; }
+        .sectionLabel { font-size: 12px; font-weight: 800; color: var(--muted); text-transform: uppercase; margin: 0 0 10px 4px; }
+        .settingItem { display: flex; align-items: center; justify-content: space-between; padding: 16px; background: #fff; border: 1px solid var(--line); border-radius: 18px; margin-bottom: 8px; }
+        .settingInfo { display: flex; flex-direction: column; }
+        .settingName { font-weight: 700; font-size: 15px; }
+        .settingValue { font-size: 13px; color: var(--muted); margin-top: 2px; }
+        .toggle { width: 44px; height: 24px; background: #E5E7EB; border-radius: 22px; position: relative; }
+        .toggle::after { content: ''; width: 20px; height: 20px; background: #fff; border-radius: 50%; position: absolute; top: 2px; left: 2px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .toggle.on { background: var(--blue); }
+        .toggle.on::after { left: auto; right: 2px; }
+    </style>
+</head>
+<body>
+    <main class="app">
+        <div class="header">
+            <h1 class="title">Settings</h1>
+        </div>
+
+        <div class="section">
+            <p class="sectionLabel">Profile</p>
+            <div class="settingItem">
+                <div class="settingInfo">
+                    <span class="settingName">Linda Thompson</span>
+                    <span class="settingValue">Primary Account</span>
+                </div>
+                <span>✏️</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <p class="sectionLabel">Notifications</p>
+            <div class="settingItem">
+                <div class="settingInfo">
+                    <span class="settingName">Meds Reminders</span>
+                    <span class="settingValue">Sound and Flash</span>
+                </div>
+                <div class="toggle on"></div>
+            </div>
+            <div class="settingItem">
+                <div class="settingInfo">
+                    <span class="settingName">Visit Alerts</span>
+                    <span class="settingValue">1 hour before</span>
+                </div>
+                <div class="toggle on"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <p class="sectionLabel">Security</p>
+            <div class="settingItem">
+                <span class="settingName">Face ID</span>
+                <div class="toggle on"></div>
+            </div>
+            <div class="settingItem">
+                <span class="settingName">Privacy Mode</span>
+                <div class="toggle"></div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav">
+        <a href="../index.html"><span class="ico">🏠</span><span>Home</span></a>
+        <a href="meds.html"><span class="ico">💊</span><span>Meds</span></a>
+        <a href="appointments.html"><span class="ico">📅</span><span>Visits</span></a>
+        <a href="caregiver.html"><span class="ico">👥</span><span>Care</span></a>
+        <a class="active" href="settings.html"><span class="ico">⚙️</span><span>Settings</span></a>
+    </nav>
+</body>
+</html>

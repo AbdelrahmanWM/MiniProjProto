@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Confirm Dose</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+        .back { text-decoration: none; color: var(--blue); font-weight: 900; font-size: 15px; display: flex; align-items: center; gap: 6px; }
+        .screenTitle { margin: 0; font-size: 19px; font-weight: 900; letter-spacing: -0.2px; }
+        .card { padding: 20px; }
+        .label { font-size: 13px; font-weight: 800; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .title { margin: 0; font-size: 22px; font-weight: 900; }
+        .meta { margin: 8px 0 0; font-size: 15px; color: var(--muted); }
+        .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; padding: 8px 12px; border-radius: 999px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2); color: #B45309; margin-top: 16px; }
+        .primary { width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; padding: 18px; border-radius: 18px; background: var(--green); color: #fff; font-weight: 900; font-size: 16px; margin-top: 24px; }
+        .btnRow { display: flex; gap: 12px; margin-top: 12px; }
+        .ghost { flex: 1; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; border-radius: 18px; border: 1px solid var(--line); background: #fff; color: var(--text); font-weight: 900; font-size: 15px; }
+    </style>
+</head>
+<body>
+    <main class="app">
+        <div class="topbar">
+            <a class="back" href="../index.html">← Back</a>
+            <h1 class="screenTitle">Confirm</h1>
+            <span style="width: 52px"></span>
+        </div>
+
+        <section class="card">
+            <span class="label">Scheduled now</span>
+            <p class="title">Metformin</p>
+            <p class="meta">1 tablet • 2:00 PM</p>
+            <div class="badge">⏳ Due</div>
+
+            <a class="primary" href="log.html">✓ Taken</a>
+
+            <div class="btnRow">
+                <a class="ghost" href="../index.html">🕒 Snooze</a>
+                <a class="ghost" href="../index.html">⏭ Skip</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

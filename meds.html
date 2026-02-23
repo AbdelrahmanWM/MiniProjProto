@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Medications</title>
+<style>
+  :root{
+    --bg:#F5F7FB; --card:#fff; --text:#0B1220; --muted:#6B7280; --line:#E6EAF2;
+    --blue:#2F6FED; --green:#24A67B;
+    --shadow:0 10px 30px rgba(13,23,43,.08); --shadow2:0 6px 18px rgba(13,23,43,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+  .app{
+    min-height:100vh;
+    padding: calc(env(safe-area-inset-top) + 14px) 16px calc(env(safe-area-inset-bottom) + 88px) 16px;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .header{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+  }
+  .title{margin:0; font-size:20px; font-weight:900; letter-spacing:-.2px}
+  .add{
+    text-decoration:none; color:#fff; font-weight:900;
+    background:var(--blue);
+    padding:10px 12px; border-radius:14px;
+    box-shadow:var(--shadow2);
+    display:flex; align-items:center; gap:8px;
+  }
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:22px;
+    padding:14px; box-shadow:var(--shadow2);
+  }
+  .row{display:flex; align-items:flex-start; justify-content:space-between; gap:12px}
+  .name{margin:0; font-size:16px; font-weight:900; letter-spacing:-.15px}
+  .meta{margin:6px 0 0; font-size:13px; color:#374151; line-height:1.25}
+  .pill{
+    white-space:nowrap;
+    font-size:12px; font-weight:900;
+    padding:8px 10px; border-radius:999px;
+    border:1px solid var(--line); background:#fff; color:#111827;
+  }
+  .btn{
+    margin-top:12px;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    text-decoration:none;
+    padding:13px 14px;
+    border-radius:16px;
+    background:#F2F5FF;
+    border:1px solid var(--line);
+    color:#111827;
+    font-weight:900;
+  }
+  .btn.primary{background:var(--green); color:#fff; border:none}
+  .nav{
+    position:fixed; left:0; right:0; bottom:0;
+    padding: 10px 10px calc(env(safe-area-inset-bottom) + 10px);
+    background: rgba(255,255,255,.86);
+    border-top: 1px solid var(--line);
+    backdrop-filter: blur(16px);
+    display:flex; justify-content:space-around; gap:8px;
+  }
+  .nav a{
+    text-decoration:none; color:var(--muted); font-size:11px; font-weight:700;
+    width:20%;
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+    padding:8px 0; border-radius:12px;
+  }
+  .nav a.active{color:var(--blue)}
+  .ico{font-size:18px; line-height:1}
+</style>
+</head>
+<body>
+  <main class="app">
+    <div class="header">
+      <h1 class="title">Medications</h1>
+      <a class="add" href="home.html">＋ Add</a>
+    </div>
+
+    <section class="card">
+      <div class="row">
+        <div>
+          <p class="name">Metformin</p>
+          <p class="meta">2× daily • Morning + Afternoon</p>
+        </div>
+        <div class="pill">1 tablet</div>
+      </div>
+      <a class="btn" href="confirm.html">✓ Confirm next dose</a>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <div>
+          <p class="name">Lisinopril</p>
+          <p class="meta">Daily • Morning</p>
+        </div>
+        <div class="pill">10 mg</div>
+      </div>
+      <a class="btn" href="log.html">View history</a>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <div>
+          <p class="name">Pain relief (PRN)</p>
+          <p class="meta">As needed • Max every 6 hours</p>
+        </div>
+        <div class="pill">1–2 tablets</div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="nav" aria-label="Bottom navigation">
+    <a href="home.html"><span class="ico">🏠</span><span>Home</span></a>
+    <a class="active" href="meds.html"><span class="ico">💊</span><span>Meds</span></a>
+    <a href="appointments.html"><span class="ico">📅</span><span>Visits</span></a>
+    <a href="caregiver.html"><span class="ico">👥</span><span>Care</span></a>
+    <a href="settings.html"><span class="ico">⚙️</span><span>Settings</span></a>
+  </nav>
+</body>
+</html>

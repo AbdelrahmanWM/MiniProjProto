@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>History</title>
+<style>
+  :root{
+    --bg:#F5F7FB; --card:#fff; --text:#0B1220; --muted:#6B7280; --line:#E6EAF2;
+    --blue:#2F6FED; --green:#24A67B;
+    --shadow2:0 6px 18px rgba(13,23,43,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+  .app{
+    min-height:100vh;
+    padding: calc(env(safe-area-inset-top) + 14px) 16px calc(env(safe-area-inset-bottom) + 18px) 16px;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .topbar{display:flex; align-items:center; justify-content:space-between}
+  .back{color:var(--blue); text-decoration:none; font-weight:900; font-size:14px}
+  .title{margin:0; font-size:18px; font-weight:900; letter-spacing:-.2px}
+  .spacer{width:52px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:22px;
+    padding:14px; box-shadow:var(--shadow2);
+  }
+  .item{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .item:last-child{border-bottom:none}
+  .name{margin:0; font-size:14px; font-weight:900; letter-spacing:-.1px}
+  .meta{margin:6px 0 0; font-size:12px; color:#374151}
+  .tag{
+    font-size:12px; font-weight:900;
+    padding:8px 10px; border-radius:999px;
+    border:1px solid rgba(36,166,123,.30); background:rgba(36,166,123,.10);
+    color:#111827; white-space:nowrap;
+    display:flex; align-items:center; gap:6px;
+  }
+  .btn{
+    margin-top:12px;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    text-decoration:none;
+    padding:14px 14px;
+    border-radius:16px;
+    font-weight:900;
+  }
+  .btn.primary{background:var(--green); color:#fff}
+  .btn.secondary{background:#F2F5FF; border:1px solid var(--line); color:#111827}
+</style>
+</head>
+<body>
+  <main class="app">
+    <div class="topbar">
+      <a class="back" href="home.html">← Back</a>
+      <h1 class="title">History</h1>
+      <span class="spacer"></span>
+    </div>
+
+    <section class="card">
+      <div class="item">
+        <div>
+          <p class="name">Metformin</p>
+          <p class="meta">Today • 8:00 AM</p>
+        </div>
+        <span class="tag">✅ Taken</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <p class="name">Metformin</p>
+          <p class="meta">Yesterday • 2:00 PM</p>
+        </div>
+        <span class="tag">✅ Taken</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <p class="name">Lisinopril</p>
+          <p class="meta">Yesterday • 8:00 AM</p>
+        </div>
+        <span class="tag">✅ Taken</span>
+      </div>
+
+      <a class="btn primary" href="home.html">📤 Export</a>
+      <a class="btn secondary" href="home.html">Done</a>
+    </section>
+  </main>
+</body>
+</html>

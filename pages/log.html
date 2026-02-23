@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>History</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+        .back { color: var(--blue); text-decoration: none; font-weight: 900; font-size: 15px; }
+        .title { margin: 0; font-size: 19px; font-weight: 900; }
+        .spacer { width: 52px; }
+        .item { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); }
+        .item:last-child { border-bottom: none; }
+        .name { margin: 0; font-size: 15px; font-weight: 900; }
+        .meta { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+        .tag { font-size: 11px; font-weight: 900; padding: 6px 10px; border-radius: 999px; background: rgba(36, 166, 123, 0.1); border: 1px solid rgba(36, 166, 123, 0.2); color: #047857; }
+        .btn { margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; padding: 16px; border-radius: 18px; font-weight: 900; font-size: 15px; }
+        .btn.primary { background: var(--green); color: #fff; }
+        .btn.secondary { background: #F2F5FF; border: 1px solid var(--line); color: var(--text); }
+    </style>
+</head>
+<body>
+    <main class="app">
+        <div class="topbar">
+            <a class="back" href="../index.html">← Back</a>
+            <h1 class="title">History</h1>
+            <span class="spacer"></span>
+        </div>
+
+        <section class="card">
+            <div class="item">
+                <div>
+                    <p class="name">Metformin</p>
+                    <p class="meta">Today • 8:00 AM</p>
+                </div>
+                <span class="tag">✅ Taken</span>
+            </div>
+
+            <div class="item">
+                <div>
+                    <p class="name">Metformin</p>
+                    <p class="meta">Yesterday • 2:00 PM</p>
+                </div>
+                <span class="tag">✅ Taken</span>
+            </div>
+
+            <div class="item" bio-data-source="manual">
+                <div>
+                    <p class="name">Lisinopril</p>
+                    <p class="meta">Yesterday • 8:00 AM</p>
+                </div>
+                <span class="tag">✅ Taken</span>
+            </div>
+
+            <a class="btn primary" href="../index.html">📤 Export</a>
+            <a class="btn secondary" href="../index.html">Done</a>
+        </section>
+    </main>
+</body>
+</html>

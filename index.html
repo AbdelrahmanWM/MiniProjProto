@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Health Companion — Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-bottom: 8px;
+        }
+        .headerTop {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .hTitle { margin: 0; font-size: 24px; font-weight: 900; letter-spacing: -0.5px; }
+        .hSub { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+        .chipRow { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0; scrollbar-width: none; }
+        .chip { 
+            background: var(--card); border: 1px solid var(--line); padding: 8px 12px; 
+            border-radius: 999px; font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 6px;
+            white-space: nowrap;
+        }
+        .sectionTitle { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+        .sectionTitle h2 { margin: 0; font-size: 18px; font-weight: 900; }
+        .sectionTitle a { font-size: 14px; font-weight: 700; color: var(--blue); text-decoration: none; }
+        .grid { display: flex; flex-direction: column; gap: 12px; }
+        .label { font-size: 12px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 8px; }
+        .title { margin: 0; font-size: 17px; font-weight: 900; }
+        .meta { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+        .badge { font-size: 11px; font-weight: 900; padding: 6px 10px; border-radius: 999px; }
+        .badge.warn { background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2); color: #B45309; }
+        .badge.ok { background: rgba(36, 166, 123, 0.1); border: 1px solid rgba(36, 166, 123, 0.2); color: #047857; }
+        .primaryBtn, .secondaryBtn { 
+            display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px;
+            padding: 14px; border-radius: 16px; font-weight: 900; text-decoration: none; font-size: 14px; 
+        }
+        .primaryBtn { background: var(--green); color: #fff; }
+        .secondaryBtn { background: #F2F5FF; border: 1px solid var(--line); color: var(--text); }
+        .pillRow { display: flex; gap: 8px; margin-top: 8px; overflow-x: auto; scrollbar-width: none; }
+        .pill { 
+            background: #fff; border: 1px solid var(--line); padding: 8px 10px; border-radius: 999px; 
+            font-size: 12px; font-weight: 700; white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <main class="app">
+        <header class="header">
+            <div class="headerTop">
+                <div>
+                    <h1 class="hTitle">Today</h1>
+                    <p class="hSub">Your meds and appointments in one place.</p>
+                </div>
+                <div class="chip" style="background:#000; color:#fff; border:none;">
+                    <span>👤</span><span>Linda</span>
+                </div>
+            </div>
+
+            <div class="chipRow">
+                <div class="chip"><span>✅</span><span>System check: 2 min</span></div>
+                <div class="chip"><span>🔔</span><span>Reminders on</span></div>
+                <div class="chip"><span>🔒</span><span>Private</span></div>
+            </div>
+        </header>
+
+        <div class="sectionTitle">
+            <h2>Next up</h2>
+            <a href="pages/log.html">History</a>
+        </div>
+
+        <section class="grid">
+            <article class="card">
+                <p class="label">Medication</p>
+                <div class="row">
+                    <div>
+                        <p class="title">Metformin</p>
+                        <p class="meta">2:00 PM • 1 tablet</p>
+                    </div>
+                    <div class="badge warn"><span>⏳</span><span>Due soon</span></div>
+                </div>
+                <a class="primaryBtn" href="pages/confirm.html"><span>✓</span><span>Mark as taken</span></a>
+                <a class="secondaryBtn" href="pages/meds.html"><span>💊</span><span>View plan</span></a>
+            </article>
+
+            <article class="card">
+                <p class="label">Today</p>
+                <div class="pillRow">
+                    <div class="pill"><span>✅</span><span>8:00 AM Taken</span></div>
+                    <div class="pill"><span>⏳</span><span>2:00 PM Pending</span></div>
+                    <div class="pill"><span>⏳</span><span>8:00 PM Pending</span></div>
+                </div>
+            </article>
+
+            <article class="card">
+                <p class="label">Appointment</p>
+                <div class="row">
+                    <div>
+                        <p class="title">Dr. Smith</p>
+                        <p class="meta">Oct 12 • 10:30 AM • Clinic A</p>
+                    </div>
+                    <div class="badge ok"><span>📅</span><span>Upcoming</span></div>
+                </div>
+                <a class="secondaryBtn" href="pages/appointments.html"><span>📍</span><span>View details</span></a>
+            </article>
+
+            <article class="card">
+                <p class="label">Support</p>
+                <div class="pillRow">
+                    <div class="pill">📞 Call clinic</div>
+                    <div class="pill">🆘 Hotline</div>
+                    <div class="pill">💬 Message</div>
+                </div>
+                <a class="secondaryBtn" href="pages/messages.html"><span>💬</span><span>Open messages</span></a>
+            </article>
+        </section>
+    </main>
+
+    <nav class="nav">
+        <a class="active" href="index.html"><span class="ico">🏠</span><span>Home</span></a>
+        <a href="pages/meds.html"><span class="ico">💊</span><span>Meds</span></a>
+        <a href="pages/appointments.html"><span class="ico">📅</span><span>Visits</span></a>
+        <a href="pages/caregiver.html"><span class="ico">👥</span><span>Care</span></a>
+        <a href="pages/settings.html"><span class="ico">⚙️</span><span>Settings</span></a>
+    </nav>
+</body>
+</html>

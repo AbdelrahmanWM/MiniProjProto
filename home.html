@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Health Companion — Home</title>
+    <style>
+      /* =========================
+   WIREFRAME MODE OVERRIDES
+   Paste at END of your <style>
+   ========================= */
+
+      /* 1) Grayscale + neutral palette */
+      :root {
+        --bg: #f2f2f2;
+        --card: #ffffff;
+        --text: #111111;
+        --muted: #777777;
+        --line: #d6d6d6;
+
+        --blue: #9a9a9a;
+        --green: #9a9a9a;
+        --amber: #9a9a9a;
+        --red: #9a9a9a;
+
+        --shadow: 0 0 0 rgba(0, 0, 0, 0);
+        --shadow2: 0 0 0 rgba(0, 0, 0, 0);
+      }
+
+      /* Optional: force grayscale even if images exist later */
+      html {
+        filter: grayscale(1);
+      }
+
+      /* 2) Make everything look like boxes (no gradients, no “real” colors) */
+      .header {
+        background: #e9e9e9 !important;
+        color: transparent !important;
+        box-shadow: none !important;
+        border: 1px solid var(--line) !important;
+      }
+      .card {
+        box-shadow: none !important;
+        border: 1px solid var(--line) !important;
+        background: var(--card) !important;
+      }
+      .nav {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: none !important;
+      }
+
+      /* Buttons become gray blocks */
+      .primaryBtn,
+      .secondaryBtn {
+        background: #e6e6e6 !important;
+        border: 1px solid var(--line) !important;
+        color: transparent !important;
+      }
+
+      /* Chips / pills / badges become outlined gray blocks */
+      .chip,
+      .pill,
+      .badge {
+        background: #f3f3f3 !important;
+        border: 1px solid var(--line) !important;
+        color: transparent !important;
+        box-shadow: none !important;
+      }
+
+      /* 3) Remove all visible text but preserve layout height/spacing
+      - keep existing font sizes/line-heights
+      - just hide glyphs via transparent color */
+      body,
+      p,
+      h1,
+      h2,
+      a,
+      span,
+      div {
+        color: transparent !important;
+        text-shadow: none !important;
+      }
+
+      /* Keep links from showing underline/blue */
+      a {
+        text-decoration: none !important;
+      }
+
+      /* 4) Replace “text” with simple wireframe bars (optional but helps readability of structure)
+      These pseudo-elements sit where text would be, without affecting layout. */
+      .hTitle,
+      .hSub,
+      .sectionTitle h2,
+      .sectionTitle a,
+      .label,
+      .title,
+      .meta {
+        position: relative;
+      }
+
+      /* Headline bar */
+      .hTitle::after {
+        content: "";
+        display: block;
+        height: 14px;
+        width: 110px;
+        border-radius: 6px;
+        background: #d9d9d9;
+      }
+
+      /* Subtitle bar */
+      .hSub::after {
+        content: "";
+        display: block;
+        height: 10px;
+        width: 220px;
+        margin-top: 8px;
+        border-radius: 6px;
+        background: #dcdcdc;
+      }
+
+      /* Section title + History link bars */
+      .sectionTitle h2::after {
+        content: "";
+        display: block;
+        height: 10px;
+        width: 80px;
+        border-radius: 6px;
+        background: #dcdcdc;
+      }
+      .sectionTitle a::after {
+        content: "";
+        display: block;
+        height: 10px;
+        width: 60px;
+        border-radius: 6px;
+        background: #dcdcdc;
+      }
+
+      /* Label bar */
+      .label::after {
+        content: "";
+        display: block;
+        height: 9px;
+        width: 90px;
+        border-radius: 6px;
+        background: #e0e0e0;
+      }
+
+      /* Title bar */
+      .title::after {
+        content: "";
+        display: block;
+        height: 12px;
+        width: 130px;
+        border-radius: 6px;
+        background: #d9d9d9;
+      }
+
+      /* Meta bar */
+      .meta::after {
+        content: "";
+        display: block;
+        height: 10px;
+        width: 180px;
+        margin-top: 8px;
+        border-radius: 6px;
+        background: #e0e0e0;
+      }
+
+      /* Button label bars (keep button height the same) */
+      .primaryBtn,
+      .secondaryBtn {
+        position: relative;
+      }
+      .primaryBtn::after,
+      .secondaryBtn::after {
+        content: "";
+        display: block;
+        height: 10px;
+        width: 140px;
+        border-radius: 6px;
+        background: #d7d7d7;
+      }
+
+      /* Badge gets a small bar */
+      .badge {
+        position: relative;
+      }
+      .badge::after {
+        content: "";
+        display: block;
+        height: 9px;
+        width: 70px;
+        border-radius: 6px;
+        background: #dcdcdc;
+      }
+
+      /* Chips + pills show small bars too */
+      .chip,
+      .pill {
+        position: relative;
+      }
+      .chip::after {
+        content: "";
+        display: block;
+        height: 9px;
+        width: 90px;
+        border-radius: 6px;
+        background: #dcdcdc;
+      }
+      .pill::after {
+        content: "";
+        display: block;
+        height: 9px;
+        width: 80px;
+        border-radius: 6px;
+        background: #e0e0e0;
+      }
+
+      /* Bottom nav: hide emoji icons & labels, replace with small squares */
+      .nav a {
+        color: transparent !important;
+        position: relative;
+      }
+      .nav a::after {
+        content: "";
+        width: 22px;
+        height: 22px;
+        border-radius: 7px;
+        background: #d9d9d9;
+        display: block;
+      }
+
+      /* Remove emoji sizing effects */
+      .ico {
+        color: transparent !important;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div class="headerTop">
+          <div>
+            <h1 class="hTitle">Today</h1>
+            <p class="hSub">Your meds and appointments in one place.</p>
+          </div>
+          <div class="chip" aria-label="Profile">
+            <span>👤</span><span>Linda</span>
+          </div>
+        </div>
+
+        <div class="chipRow">
+          <div class="chip">
+            <span>✅</span><span>System check: 2 min</span>
+          </div>
+          <div class="chip"><span>🔔</span><span>Reminders on</span></div>
+          <div class="chip"><span>🔒</span><span>Private</span></div>
+        </div>
+      </header>
+
+      <div class="sectionTitle">
+        <h2>Next up</h2>
+        <a href="log.html">History</a>
+      </div>
+
+      <section class="grid">
+        <article class="card">
+          <p class="label">Medication</p>
+          <div class="row">
+            <div>
+              <p class="title">Metformin</p>
+              <p class="meta">2:00 PM • 1 tablet</p>
+            </div>
+            <div class="badge warn"><span>⏳</span><span>Due soon</span></div>
+          </div>
+          <a class="primaryBtn" href="confirm.html"
+            ><span>✓</span><span>Mark as taken</span></a
+          >
+          <a class="secondaryBtn" href="meds.html"
+            ><span>💊</span><span>View plan</span></a
+          >
+        </article>
+
+        <article class="card">
+          <p class="label">Today</p>
+          <div class="pillRow">
+            <div class="pill"><span>✅</span><span>8:00 AM Taken</span></div>
+            <div class="pill"><span>⏳</span><span>2:00 PM Pending</span></div>
+            <div class="pill"><span>⏳</span><span>8:00 PM Pending</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="label">Appointment</p>
+          <div class="row">
+            <div>
+              <p class="title">Dr. Smith</p>
+              <p class="meta">Oct 12 • 10:30 AM • Clinic A</p>
+            </div>
+            <div class="badge ok"><span>📅</span><span>Upcoming</span></div>
+          </div>
+          <a class="secondaryBtn" href="appointments.html"
+            ><span>📍</span><span>View details</span></a
+          >
+        </article>
+
+        <article class="card">
+          <p class="label">Support</p>
+          <div class="pillRow">
+            <div class="pill">📞 Call clinic</div>
+            <div class="pill">🆘 Hotline</div>
+            <div class="pill">💬 Message</div>
+          </div>
+          <a class="secondaryBtn" href="messages.html"
+            ><span>💬</span><span>Open messages</span></a
+          >
+        </article>
+      </section>
+    </main>
+
+    <nav class="nav" aria-label="Bottom navigation">
+      <a class="active" href="home.html"
+        ><span class="ico">🏠</span><span>Home</span></a
+      >
+      <a href="meds.html"><span class="ico">💊</span><span>Meds</span></a>
+      <a href="appointments.html"
+        ><span class="ico">📅</span><span>Visits</span></a
+      >
+      <a href="caregiver.html"><span class="ico">👥</span><span>Care</span></a>
+      <a href="settings.html"
+        ><span class="ico">⚙️</span><span>Settings</span></a
+      >
+    </nav>
+  </body>
+</html>
