@@ -87,3 +87,53 @@ body {
   justify-content: space-between;
   gap: 12px;
 }
+
+/* =========================
+   MOBILE FRAME FOR DESKTOP
+   ========================= */
+@media (min-width: 500px) {
+  body {
+    background-color: #f0f2f5;
+    /* subtle grid background for desktop decor */
+    background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+    background-size: 30px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .app {
+    width: 390px;
+    height: 844px; /* Fixed height for phone look */
+    background: var(--bg);
+    box-shadow: 
+        0 0 0 12px #1a1a1a, /* Inner bezel */
+        0 0 0 15px #222,    /* Outer bezel */
+        0 30px 60px rgba(0,0,0,0.15);
+    border-radius: 45px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 20px; /* buffer */
+  }
+
+  .nav {
+    position: relative; /* Inside the flex container */
+    bottom: auto;
+    left: auto !important;
+    transform: none;
+    width: 100%;
+    border-radius: 0;
+    z-index: 1000;
+  }
+}
